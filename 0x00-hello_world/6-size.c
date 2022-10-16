@@ -8,14 +8,14 @@ int main(void)
 {
 int Int_type;
 long int Lon_Int_type;
-double Doub_type;
+long long int simp_type;
 float Flo_type;
 char Character_type;
 
-printf("Size of int: %lu bytes \n", (unsigned long)sizeof(Int_type));
-printf("Size of Long int: %lu bytes \n", (unsigned long)sizeof(Lon_Int_type));
-printf("Size of double: %lu bytes \n", (unsigned long)sizeof(Doub_type));
-printf("Size of float: %lu bytes \n", (unsigned long)sizeof(Flo_type));
 printf("Size char: %lu bytes \n", (unsigned long)sizeof(Character_type));
+printf("Size of int: %lu bytes \n", (unsigned long)sizeof(Int_type));
+printf("Size of long int: %lu bytes \n", (unsigned long)sizeof(Lon_Int_type));
+printf("Size of long long int: %lu bytes \n", (unsigned long)sizeof(simp_type));
+printf("Size of float: %lu bytes \n", (unsigned long)sizeof(Flo_type));
 return (0);
 }
