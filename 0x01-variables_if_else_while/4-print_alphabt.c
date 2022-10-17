@@ -8,7 +8,7 @@
 int main(void)
 {
 	char c;
-	char n1 =\n;
+	char n1 = \n;
 
 	for (c = 'a; c<=z; ++c)
 	{
