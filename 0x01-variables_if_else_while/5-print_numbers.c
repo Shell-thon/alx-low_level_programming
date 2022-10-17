@@ -7,7 +7,7 @@
 int main(void)
 {
 	char c;
-	char n1 = \n;
+	char n1 = '\n';
 
 	for (c = 0; c <= '9'; ++c)
 	{
