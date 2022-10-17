@@ -6,14 +6,13 @@
  */
 int main(void)
 {
-	char c;
-	char n1 = '\n';
+	int i;
 
-	for (c = 0; c <= '9'; ++c)
+	for (i = 0; i < 10; i++)
+
 	{
-		putchar(c);
+		printf("%d", i);
 	}
-	putchar(n1);
-
+	putchar('\n');
 	return (0);
 }
