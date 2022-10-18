@@ -6,9 +6,12 @@
  */
 int main(void)
 {
-	char dev = "_putchar"
+	char dev = "_putchar";
 
-	for ()
-	return(0);
+	for (i = 0, i <= 9, i++)
+	{
+		putchar(dev);
+	}
+	_putchar('\n');
+	return (0);
 }
-
