@@ -1,9 +1,9 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- *	print_alphabet - print all alphabet in lowercase
+ *	print_alphabet - print all alphabet
  *
- *	Return: Always 0.
+ *	Description: prints the alphabet in lowercase in ascending order
  */
 void print_alphabet(void)
 {
