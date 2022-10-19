@@ -1,17 +1,19 @@
-#include "alx.h"
+#include "main.h"
+
 /**
- * main - Entry point
+ * main - _putchar
  *
  * Return: Always 0.
  */
 int main(void)
 {
-	char dev = "_putchar";
-
-	for (i = 0, i <= 9, i++)
-	{
-		putchar(dev);
-	}
-	_putchar('\n');
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
 	return (0);
 }
