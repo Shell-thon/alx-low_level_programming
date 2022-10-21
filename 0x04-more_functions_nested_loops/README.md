@@ -12,6 +12,6 @@
 * What are the gcc flags -Wall -Werror -pedantic -Wextra -std=gnu89
 * What are header files and how to to use them with #include
 
-[Alx Parent directory: ] (https://github.com/Shell-thon/alx-low_level_programming)
+[Alx C Project 0x04: ](https://github.com/Shell-thon/alx-low_level_programming.git)
 
 # Author: Shell
