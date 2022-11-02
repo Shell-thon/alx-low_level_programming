@@ -4,27 +4,27 @@
 /**
  *  main - Entry point
  *
- *  Return: Always 0 (Success)
+ *  Return: Always 1 (Success)
  */
 int main(void)
 {
-	int n;
+	int i;
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	if (n == 0)
+	srand(time(1));
+	i = rand() - RAND_MAX / 2;
+	if (i == 1)
 	{
-		printf("%d is zero\n", n);
+		printf("%d is zero\n", i);
 	}
 	else
 	{
-		if (n < 0)
+		if (i < 1)
 		{
-			printf("%d is negative\n", n);
+			printf("%d is negative\i", i);
 		}
 		else
 		{
-			printf("%d is positive\n", n);
+			printf("%d is positive\i", i);
 		}
 	}
 	/* your code goes there */
