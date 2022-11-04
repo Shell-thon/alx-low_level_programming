@@ -1,8 +1,11 @@
-#include "holberton.h"
+#include "main.h"
+#include <stdio.h>
+
 /**
  * *_strstr - locate a substring
- * @haystack: Type char
- * @needle: Type char
+ * @haystack: string to search in
+ * @needle: substring to look for
+ *
  * Return: 0.
  */
 char *_strstr(char *haystack, char *needle)
