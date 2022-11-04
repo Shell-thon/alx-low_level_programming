@@ -2,13 +2,13 @@
 #define NULL 0
 
 /**
-*  _strspn - function
-*  @s: the firat parameter s return num bytes of
-*  @accept: the second parameter *accept bytes from
+*  _strspn - function Entry point
+*  @s: input
+*  @accept: input
 *
 * Description: _strspn function to get through 
 * length of prefix substring
-* Return: s
+* Return: Always 0 (Success)
 */
 unsigned int _strspn(char *s, char *accept)
 {
