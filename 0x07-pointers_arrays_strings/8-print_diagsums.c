@@ -7,7 +7,7 @@
  * @a: square matrix of which we print the sum of diagonals
  * @size: size of yhe matrix
  */
-void int_diagsums(int *a, int size)
+void print_diagsums(int *a, int size)
 {
 	int i;
 
