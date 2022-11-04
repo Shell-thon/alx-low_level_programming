@@ -2,8 +2,8 @@
 
 /**
 *  _strspn - Entry point
-*  @s: input
-*  @accept: input
+*  @*s: input
+*  @*accept: input
 *
 * Descriptuon: s parameter contains the intial segementation
 * where the accept parameter returns numbers of bytes
