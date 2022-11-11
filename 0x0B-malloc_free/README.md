@@ -485,7 +485,7 @@ julien@ubuntu:~/0x0a. malloc, free$
 * Directory: `0x0B-malloc_free`
 * File: `4-free_grid.c`
 
-### [5. It isn't the mountains ahead to climb that wear you out; it's the pebble in your shoe](./5-argstostr.c)
+### [5. It isn't the mountains ahead to climb that wear you out; it's the pebble in your shoe](./100-argstostr.c)
 
 Write a function that concatenates all the arguments of your program.
 
@@ -494,7 +494,7 @@ Write a function that concatenates all the arguments of your program.
 - Returns a pointer to a new string, or `NULL` if it fails
 - Each argument should be followed by a `\n` in the new string
 ```
-julien@ubuntu:~/0x0a. malloc, free$ cat 5-main.c
+julien@ubuntu:~/0x0a. malloc, free$ cat 100-main.c
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -517,7 +517,7 @@ int main(int ac, char *av[])
     free(s);
     return (0);
 }
-julien@ubuntu:~/0x0a. malloc, free$ gcc -Wall -pedantic -Werror -Wextra 5-main.c 5-argstostr.c -o args
+julien@ubuntu:~/0x0a. malloc, free$ gcc -Wall -pedantic -Werror -Wextra 100-main.c 100-argstostr.c -o args
 julien@ubuntu:~/0x0a. malloc, free$ ./args I will "show you" how great I am
 ./args
 I
@@ -534,7 +534,7 @@ julien@ubuntu:~/0x0a. malloc, free$
 
 * GitHub repository: `holbertonschool-low_level_programming`
 * Directory: `0x0B-malloc_free`
-* File: `5-argstostr.c`
+* File: `100-argstostr.c`
 
 ### 6. I will show you how great I am #advanced
 
@@ -548,7 +548,7 @@ Write a function that splits a string into words.
 - Returns `NULL` if `str == NULL` or `str == ""`
 - If your function fails, it should return `NULL`
 ```
-julien@ubuntu:~/0x0a. malloc, free$ cat 100-main.c
+julien@ubuntu:~/0x0a. malloc, free$ cat 101-main.c
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -587,7 +587,7 @@ int main(void)
     print_tab(tab);
     return (0);
 }
-julien@ubuntu:~/0x0a. malloc, free$ gcc -Wall -pedantic -Werror -Wextra 100-main.c 100-strtow.c -o strtow
+julien@ubuntu:~/0x0a. malloc, free$ gcc -Wall -pedantic -Werror -Wextra 101-main.c 101-strtow.c -o strtow
 julien@ubuntu:~/0x0a. malloc, free$ ./strtow | cat -e
 Holberton$
 School$
@@ -599,7 +599,7 @@ julien@ubuntu:~/0x0a. malloc, free$
 
 * GitHub repository: `holbertonschool-low_level_programming`
 * Directory: `0x0B-malloc_free`
-* File: `100-strtow.c`
+* File: `101-strtow.c`
 
 </details>
 
