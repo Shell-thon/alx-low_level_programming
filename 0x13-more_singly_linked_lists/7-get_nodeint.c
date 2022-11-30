@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- *   get_nodeint_at_index _ Returns ntn node of a list.
+ *   get_nodeint_at_index - Returns ntn node of a list.
  *    @head: pointer to first node
  *     @index: count of node in list.
  *
