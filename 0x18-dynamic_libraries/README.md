@@ -42,4 +42,4 @@ You are tasked to come up with solutions for the tasks below yourself to meet wi
 - A README.md file, at the root of the folder of the project, describing what each script is doing
 - All your files must be executable
 
-# AUTHOR : Shell
+### Author : Adejare Michael
