@@ -77,6 +77,6 @@ Python dictionaries are implemented using hash tables. When you will be done wit
 
 Note that all dictionaries are not implemented using hash tables and there is a difference between a dictionary and a hash table. Read more [here](https://www.techopedia.com/definition/18/hash-table) (not mandatory).
 
-##Author
+## Author
 
 * **Michael** - [Shell-thon](https://github.com/Shell-thon)
