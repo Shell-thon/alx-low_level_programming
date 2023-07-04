@@ -1,82 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
- * _dlistint_len - the number of elements in a linked list_t list
- *
- * @h: list to browse
- *
- * Return: size of the list
- */
-size_t _dlistint_len(const dlistint_t *h)
-{
-if (h == NULL)
-return (0);
-else
-return (_dlistint_len(h->next) + 1);
-}
-
-/**
- * _get_nodeint_at_index - the nth node of a listint_t linked list
- *
- * @head: first element
- * @index: element's number
- *
- * Return: a node
- */
-dlistint_t *_get_nodeint_at_index(dlistint_t *head, unsigned int index)
-{
-unsigned int cLoop = 0;
-
-while (head != NULL)
-{
-if (index == cLoop)
-return (head);
-head = head->next;
-cLoop++;
-}
-
-return (NULL);
-}
-
-/**
  * insert_dnodeint_at_index - inserts a new node at a given position
+ * @h: pointer to head of doubly linked list
+ * @idx: index to look for
+ * @n: numeric value wanted in node inserted
  *
- * @h: first element
- * @idx: element's number
- * @n: number
- *
- * Return: he address of the new node
+ * Return: address to new node or NULL if not possible to insert
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-dlistint_t *new, *before;
-int length;
+	dlistint_t *new_node, *tmpcount = *h, *tmp1 = *h, *tmp2;
+	unsigned int count = 0;
 
-new = _createNode(n);
+	if (!h)
+		return (NULL);
+	while (tmpcount)
+		tmpcount = tmpcount->next, count++;
+	if (idx > count)
+		return (NULL);
 
-if (h == NULL || new == NULL)
-return (NULL);
+	new_node = malloc(sizeof(dlistint_t));
+	if (!new_node)
+		return (NULL);
 
-length = _dlistint_len(*h);
+	new_node->n = n;
+	if (idx == 0)
+	{
+		new_node->prev = NULL, new_node->next = *h;
+		if (*h)
+			(*h)->prev = new_node;
+		*h = new_node;
+		return (new_node);
+	}
 
-if (idx == 0)
-{
-return (add_dnodeint(h, n));
-}
-else if (idx > (unsigned int) length)
-{
-return (NULL);
-}
-else
-before = _get_nodeint_at_index(*h, idx - 1);
+	for (count = 0; count < idx; count++)
+		tmp2 = tmp1, tmp1 = tmp1->next;
 
-new->prev = before;
-new->next = before->next;
+	new_node->next = tmp1;
+	new_node->prev = tmp2;
+	tmp2->next = new_node;
+	if (tmp1)
+		tmp1->prev = new_node;
 
-if (before->next == NULL)
-return (add_dnodeint_end(h, n));
-before->next->prev = new;
-before->next = new;
-
-return (new);
+	return (new_node);
 }

@@ -1,16 +1,20 @@
+#include <stdlib.h>
 #include "lists.h"
 
 /**
- * free_dlistint - free a struct linked list
+ * free_dlistint - function that frees a dlistint_t list.
+ * @head: head of doubly linked list
  *
- * @head: first element
- *
- * Return: frees a dlistint_t list
+ * Return: No return
  */
 void free_dlistint(dlistint_t *head)
 {
-if (head == NULL)
-return;
-free_dlistint(head->next);
-free(head);
+	dlistint_t *tmp;
+
+	while (head)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
 }
