@@ -1,33 +1,29 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * if_natural_square - check if a has natural square
- * @a: int type
- * @b: int type
- * Return: return success
+ * sqrt2 - Makes possible to evaluate from 1 to n
+ * @a: same number as n
+ * @b: number that iterates from 1 to n
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-int if_natural_square(int a, int b)
+int sqrt2(int a, int b)
 {
-	if (a == (b * b))
+	if (b * b == a)
 		return (b);
-	if (b  * b  >  a)
+	else if (b * b > a)
 		return (-1);
-	return (if_natural_square(a, b + 1));
+	return (sqrt2(a, b + 1));
 }
 /**
- *  _sqrt_recursion - check if number has natural sqrt
+ * _sqrt_recursion - returns the natural square root of n
+ * @n: Number Integer
  *
- *  @n: int type
- *
- *   Return: return success
- *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
 int _sqrt_recursion(int n)
 {
-	if (n == 1)
-		return (1);
-	if (n == 0)
-		return (0);
-	if (n  < 1)
-		return (if_natural_square(n, 1));
+	return (sqrt2(n, 1));
 }
