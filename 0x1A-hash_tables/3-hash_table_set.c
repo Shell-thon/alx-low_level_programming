@@ -1,75 +1,53 @@
 #include "hash_tables.h"
 
 /**
- * set_pair - mallocs a key/value pair to the hash table.
- * @node: a pointer to the hash table array node.
- * @key: the key, a string that cannot be empty.
- * @value: the value associated with the key, can be an empty string.
+ * hash_table_set - adds an element to the hash table
+ * @ht: hash table
+ * @key: key for hash table
+ * @value: value for key
  *
- * Return: 1 on success, 0 on error.
- */
-int set_pair(hash_node_t **node, const char *key, const char *value)
-{
-	*node = malloc(sizeof(hash_node_t));
-	if (*node == NULL)
-		return (0);
-	(*node)->key = malloc(strlen(key) + 1);
-	if ((*node)->key == NULL)
-		return (0);
-	(*node)->value = malloc(strlen(value) + 1);
-	if ((*node)->value == NULL)
-		return (0);
-	strcpy((*node)->key, key);
-	strcpy((*node)->value, value);
-	return (1);
-}
-
-/**
- * hash_table_set - adds an element to the hash table.
- * @ht: a pointer to the hash table array.
- * @key: the key, a string that cannot be empty.
- * @value: the value associated with the key, can be an empty string.
- *
- * Return: 1 on success, 0 on error.
+ * Return: 1 if it succeeded, 0 otherwise
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
+	hash_node_t *hnode = NULL, *collnode = NULL;
 	unsigned long int index;
-	hash_node_t *node;
+	char *valuedup = NULL, *keydup = NULL;
 
-	if (key == NULL)
+	if (!ht || !(ht->array) || !key || !key[0])
 		return (0);
+
 	index = key_index((unsigned char *)key, ht->size);
-	node = ht->array[index];
-	if (node == NULL)
+	hnode = ht->array[index];
+	valuedup = strdup(value);
+	if (!valuedup)
+		return (0);
+
+	while (hnode != NULL)
 	{
-		if (set_pair(&node, key, value) == 0)
-			return (0);
-		node->next = NULL;
-		return (1);
-	}
-	while (node != NULL)
-	{
-		if (strcmp(node->key, key) == 0)
+		if (!strcmp(hnode->key, key))
 		{
-			if (strcmp(node->value, value) == 0)
-				return (1);
-			free(node->value);
-			node->value = malloc(strlen(value) + 1);
-			if (node->value == NULL)
-				return (0);
-			strcpy(node->value, value);
+			free(hnode->value);
+			hnode->value = valuedup;
 			return (1);
 		}
-		node = node->next;
+		hnode = hnode->next;
 	}
-	if (node == NULL)
-	{
-		if (set_pair(&node, key, value) == 0)
-			return (0);
-		node->next = ht->array[index];
-		ht->array[index] = node;
-		return (1);
-	}
-	return (0);
+
+	hnode = ht->array[index];
+
+	collnode = malloc(sizeof(hash_node_t));
+	if (collnode == NULL)
+		return (free(valuedup), 0);
+
+	keydup = strdup(key);
+	if (!keydup)
+		return (free(valuedup), free(collnode), 0);
+
+	collnode->key = keydup;
+	collnode->value = valuedup;
+	collnode->next = hnode;
+	ht->array[index] = collnode;
+
+	return (1);
 }
